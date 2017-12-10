@@ -10,19 +10,21 @@ predict_tensorflow.py {NOM_MODEL.h5} {NOM_PHOTO}
 
 ## Project tree
 IASC
- * [data](IASC/data)
+ * [data](IASC/data)<br/>
    Data to train the model
-   * [train](IASC/data/train)
-     *[benign](IASC/data/train/benign)
-     Pictures of your first category
-     *[malignant](IASC/data/train/malignant)
-     Pictures of your second category
+   * [train](IASC/data/train)<br/>
+     *[benign](IASC/data/train/benign)<br/>
+     Pictures of your first category<br/>
+     *[malignant](IASC/data/train/malignant)<br/>
+     Pictures of your second category<br/>
+     
    Data to validate the training
-   * [valid](IASC/data/valid)
-     *[benign](IASC/data/train/benign)
-     Pictures of your first category
-     *[malignant](IASC/data/train/malignant)
-     Pictures of your second category
+   * [valid](IASC/data/valid)<br/>
+     *[benign](IASC/data/train/benign)<br/>
+     Pictures of your first category<br/>
+     *[malignant](IASC/data/train/malignant)<br/>
+     Pictures of your second category<br/>
+     
  Data to test the model
  * [test](IASC/test)
 
