@@ -9,7 +9,7 @@ It will create two files (best and final) with the model.
 predict_tensorflow.py {NOM_MODEL.h5} {NOM_PHOTO}
 
 ## Project tree
-IASC
+PamelIA
  * [data](IASC/data)<br/>
    Data to train the model
    * [train](IASC/data/train)<br/>
