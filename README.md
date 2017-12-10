@@ -9,6 +9,9 @@ It will create two files (best and final) with the model.
 predict_tensorflow.py {NOM_MODEL.h5} {NOM_PHOTO}
 
 ## Project tree
+
+The data storage structure is build has explained bellow:
+
 PamelIA
  * [data](IASC/data)<br/>
    Data to train the model
@@ -27,5 +30,6 @@ PamelIA
      
  Data to test the model
  * [test](IASC/test)
+ Pictures for the final test
 
 
