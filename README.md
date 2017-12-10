@@ -7,7 +7,7 @@
 Data Science project to explore the integration of IA in the medical field
 
 ## Création du model
-Launch this file : train_tensorflow.py
+Launch this file : train_tensorflow.py<br/>
 It will create two files (best and final) with the model.
 
 ## App
