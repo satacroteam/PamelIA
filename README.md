@@ -1,4 +1,5 @@
-# predictClass
+# PamelIA
+Data Science project to explore the integration of IA in the medical field
 
 ## Création du model
 Démarer le fichier: train_tensorflow.py
@@ -6,3 +7,6 @@ Ce demarage va créer deux fichiers de modelss en fonction du model choisi dans 
 
 ## App
 predict_tensorflow.py {NOM_MODEL.h5} {NOM_PHOTO}
+
+
+
