@@ -1,4 +1,9 @@
 # PamelIA
+
+<p align="center">
+  <img src="https://clinicabau.com/img/genetica-hormonas-cabecera.jpg"/>
+</p>
+
 Data Science project to explore the integration of IA in the medical field
 
 ## Création du model
