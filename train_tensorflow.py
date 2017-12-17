@@ -68,7 +68,7 @@ class Train(object):
 
         # Define the generator of image flow for the train and valid repository
         image_flow_generator = generator.flow_from_directory(
-            # Train directory path
+            # Directory path
             directory_path,
             # Size of the picture
             target_size=image_size,
@@ -162,5 +162,4 @@ class Train(object):
         # Save final model
         fine_tuned_model.save(self.MODEL_NAME_FINAL)
 
-    # if __name__ == "__main__":
-    #    train()
+

@@ -31,8 +31,9 @@ class ImportData(object):
     """
     def __init__(self):
         self.data_path = 'Donnees_apprentissage'
+        self.test_path = 'test'
 
-    def make_mini_train_dataset(self):
+    def make_mini_train_valid_dataset(self):
         X = [path for path in os.listdir('Donnees_apprentissage')]
         y = pd.read_csv('label_learn.csv', sep=';')["label"].tolist()
         x_train, x_test, y_train, y_test = train_test_split(X, y, train_size=500, test_size=300, stratify=y)
@@ -57,3 +58,6 @@ class ImportData(object):
                 os.rename(
                 os.path.join(self.data_path, picture),
                 os.path.join("data", "valid", "malignant", picture))
+
+
+
