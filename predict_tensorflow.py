@@ -4,7 +4,6 @@ Allows to predict the probability to belongs at each classes on which the model 
 import os, time
 import numpy as np
 import pickle
-import re
 
 import pandas as pd
 from sklearn.metrics import confusion_matrix, average_precision_score

@@ -1,4 +1,5 @@
 """
+Create the true answer csv for the test data
 The answer 1 correspond to malignant and 1 to benign
 """
 import os, re
@@ -16,10 +17,10 @@ def create_test_list_indices():
     return indices_list
 
 
-def create_result_for_test(indices_list):
+def create_result_for_test(test_indices_list):
     """
     Creation of the result csv for the test data
-    :param indices_list: path of the metadata csv from ISIC (complete)
+    :param test_indices_list: path of the metadata csv from ISIC (complete)
     """
     # Define the lists of result
     list_name = []
@@ -33,7 +34,7 @@ def create_result_for_test(indices_list):
         name = re.sub(r'^ISIC_', '', name)
 
         # If this picture belong to the test add it and its result
-        if name in indices_list:
+        if name in test_indices_list:
             if result == 'benign':
                 list_name.append(name)
                 list_result.append(result)
@@ -45,6 +46,7 @@ def create_result_for_test(indices_list):
 
     # Create the binary answer dataframe
     result_binary = pd.concat([pd.Series(list_name), pd.Series(list_result), pd.Series(list_binary_result)], axis=1)
+
     # Save them as csv
     pd.DataFrame(result_binary).to_csv('result_test.csv', sep=',', index=False)
 
