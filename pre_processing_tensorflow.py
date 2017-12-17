@@ -1,24 +1,18 @@
 import cv2
-import os
+import numpy as np
 
-# Load an color image in grayscale
-dir_input_focus = r"data/train/benign/"
-# vec_list = os.listdir("D:\\challenge_isic\\app")
-eye_cascade = cv2.CascadeClassifier('beauty_spot.xml')
-dir_output_focus = "out_contouring"
+img_normal = cv2.imread(r'data\train\benign\0000869.jpg', 1)
+img = cv2.imread(r'data\train\benign\0005537.jpg', 0)
+img = cv2.equalizeHist(img)
+cimg = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
-# for j in vec_list:
-img_path = "0000009.jpg"
-img = cv2.imread(dir_input_focus + img_path)
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-eyes = eye_cascade.detectMultiScale(img)
-i = 1
-for (ex, ey, ew, eh) in eyes:
-    cv2.rectangle(img, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
-    eye = img[ey:ey + eh, ex:ex + ew]
-    if len(img) > 60:
-        cv2.imwrite(dir_output_focus + "eye_" + str(i) + "_" + img_path, eye)
-        i = i + 1
+circles = cv2.HoughCircles(img, cv2.HOUGH_GRADIENT, 1, 10, param1=50, param2=30, minRadius=600, maxRadius=615)
 
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+circles = np.uint16(np.around(circles))
+for i in circles[0, :]:
+    # draw the outer circle
+    cv2.circle(img_normal, (i[0], i[1]), i[2], (0, 255, 0), 2)
+cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+cv2.imshow('image', img_normal)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
