@@ -162,5 +162,5 @@ class Train(object):
         # Save final model
         fine_tuned_model.save(self.MODEL_NAME_FINAL)
 
-    if __name__ == "__main__":
-        train()
+    # if __name__ == "__main__":
+    #    train()
