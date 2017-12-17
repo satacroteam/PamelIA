@@ -43,10 +43,10 @@ def create_result_for_test(indices_list):
                 list_result.append(result)
                 list_binary_result.append("0")
 
-    # Create the answer dataframe
-    result = pd.concat([pd.Series(list_name), pd.Series(list_result), pd.Series(list_binary_result)], axis=1)
-    # Save it as csv
-    pd.DataFrame(result).to_csv('result_test.csv', sep=',', index=False)
+    # Create the binary answer dataframe
+    result_binary = pd.concat([pd.Series(list_name), pd.Series(list_result), pd.Series(list_binary_result)], axis=1)
+    # Save them as csv
+    pd.DataFrame(result_binary).to_csv('result_test.csv', sep=',', index=False)
 
 
 if __name__ == "__main__":
